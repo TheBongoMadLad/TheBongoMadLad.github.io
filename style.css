@@ -1,0 +1,110 @@
+body {
+	margin:0;
+	padding:0;
+	background-color:rgba(0,0,10,0.8);
+	color: #EEE;
+	font-family: sans-serif;
+	font-size: 25px;
+	user-select: none;
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	grid-template-areas:"score EnemiesList"
+						"buildings EnemiesList"
+						"buildings EnemiesList";
+}
+h1 {
+	font-size: 1.5em;
+	text-decoration-line: underline;
+	width: min-content;
+	white-space: nowrap;
+	padding: 0 1em;
+}
+button{
+	background-color: rgba(0,0,10,0.8);
+	color: #EEE;
+	border: solid #EEE 2px;
+	border-radius: 5px;
+	font-size: 1.05em;
+	transition: border 0.5s,color 0.5s, background-color 0.5s;
+}
+button:hover{
+	border: solid rgba(0,0,10,0.8) 2px;
+	color: rgba(0,0,10,0.8);
+	background-color: #EEE;
+}
+/*Buildings*/
+h1~*{
+	display:none;
+}
+h1:hover{
+	color:rgba(150,150,150,0.8);
+}
+h1.open::after {
+	content:'';
+	border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: calc(2 * 10px * 0.866) solid #EEE;
+    border-top: 10px solid transparent;
+    display: inline-block;
+    transform:rotate(180deg) translateY(-0.25em);
+    transition: transform 0.25s;
+}
+h1:hover::after{
+	border-bottom: calc(2 * 10px * 0.866) solid rgba(150,150,150,0.8);
+}
+h1::after{
+	content:'';
+	border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: calc(2 * 10px * 0.866) solid #EEE;
+    border-top: 10px solid transparent;
+    display: inline-block;
+    transform:translateY(-0.25em);
+	transform:rotate(0deg);
+	transition: transform 0.25s;
+}
+
+.upgrade,.buyable {
+	display:inline-block;
+	width:90%;
+}
+.open~*{
+	display:contents;
+}
+.ShopButton{
+	display:inline-block;
+	width:45%;
+}
+.Weapons{
+	border: solid silver 5px;
+	border-radius: 1em;
+}
+.Gold{
+	border: solid gold 5px;
+	border-radius: 1em;
+	color: gold;
+}
+.name,.count{
+	font-size: 1.25em;
+	font-weight: bold;
+}
+.Defeated{
+	color: rgba(200,0,0, 0.7);
+	font-style: oblique;
+}
+
+#scoreContainer {
+	grid-area: score;
+}
+
+#EnemiesContainer{
+	grid-area: EnemiesList;
+}
+#Gold{
+	color: gold;
+}
+#buildsContainer {
+	grid-area: buildings;
+}
+
+

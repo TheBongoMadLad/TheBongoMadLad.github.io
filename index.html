@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ClickerTest</title>
+	<link rel=icon href=assets/favicon-96x96.png>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body onclick="addGold();">
+	<header id="scoreContainer">
+		<h1 class="container-btn">Income:</h1>
+		<div id="Gold">
+			<p>Gold: <span id="GoldNumber">0</span><br> Gold Per Second: <span id="GoldPerSecond">0</span><br></p>
+		</div>
+		<div id="Weapons">
+			<p> Weapons: <span id="WeaponNumber">0</span><br> Weapons Per Second: <span id="WeaponsPerSecond">0</span></p>
+		</div>
+	</header>
+	<div>
+		<h1 class="container-btn">Buildings:</h1>
+		<div id="buildsContainer">
+		</div>
+	</div>
+	<div>
+		<h1 class="container-btn">Upgrades:</h1>
+		<div id="upgradesContainer">
+		</div>
+	</div>
+
+	<div id="EnemiesContainer">
+		<h1 class="container-btn">Countries to Conquer:</h1>
+		<div>
+			<ol id="EnemiesList" reversed="reversed" type="1">
+			</ol>
+		</div>
+	</div>
+	<footer>
+		<button onclick="resetGame();">reset</button>
+	</footer>
+
+	<script src="clicker.js"></script>
+</body>
+</html>
